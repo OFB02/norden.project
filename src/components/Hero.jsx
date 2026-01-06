@@ -1,26 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm } from '@formspree/react';
 import '../styles/Hero.css';
 
 const Hero = () => {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Netlify will handle the form submission
-    const formData = new FormData(e.target);
-    
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(formData).toString(),
-    })
-      .then(() => {
-        setSubmitted(true);
-        setEmail('');
-      })
-      .catch((error) => console.error('Form submission error:', error));
-  };
+  const [state, handleSubmit] = useForm('mvzgjjar');
 
   return (
     <section className="hero">
@@ -28,29 +11,32 @@ const Hero = () => {
         <h1 className="hero-headline">PROJECT 001</h1>
         <p className="hero-subheadline">The Heavy Shopper. Coming Soon.</p>
         
-        {!submitted ? (
+        {state.succeeded ? (
+          <p className="hero-thanks">You are on the list. We will be in touch.</p>
+        ) : (
           <form 
-            name="waitlist" 
-            method="POST" 
             onSubmit={handleSubmit}
             className="hero-form"
           >
-            <input type="hidden" name="form-name" value="waitlist" />
             <input
               type="email"
               name="email"
               placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
               required
+              disabled={state.submitting}
               className="hero-input"
             />
-            <button type="submit" className="hero-button">
-              Request Access
+            {state.errors && state.errors.length > 0 && (
+              <p className="hero-error">Something went wrong. Please try again.</p>
+            )}
+            <button 
+              type="submit" 
+              className="hero-button"
+              disabled={state.submitting}
+            >
+              {state.submitting ? 'Sending...' : 'Request Access'}
             </button>
           </form>
-        ) : (
-          <p className="hero-thanks">Thanks for joining the waitlist.</p>
         )}
       </div>
     </section>

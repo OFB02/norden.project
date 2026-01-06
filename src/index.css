@@ -167,3 +167,60 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  
+  body {
+    /* Optimize radial gradient for mobile */
+    background: radial-gradient(
+      ellipse at center,
+      #1a1a1a 0%,
+      #0f0f0f 40%,
+      #0a0a0a 100%
+    );
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  
+  body::before {
+    /* Reduce noise texture opacity on small screens */
+    opacity: 0.02;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Prevent zoom on inputs for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  input[type="email"],
+  input[type="text"],
+  input[type="tel"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Improve tap targets for touch devices */
+@media (hover: none) and (pointer: coarse) {
+  a, button {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

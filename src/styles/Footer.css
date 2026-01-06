@@ -16,3 +16,27 @@
   opacity: 0.5;
   margin: 0;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .footer {
+    bottom: 1.5rem;
+  }
+  
+  .footer p {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    bottom: 1rem;
+    padding: 0 1rem;
+  }
+  
+  .footer p {
+    font-size: 8px;
+    letter-spacing: 0.1em;
+  }
+}
