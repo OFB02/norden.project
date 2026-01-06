@@ -1,0 +1,165 @@
+/* Hero Component - Kinetic Typography */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8rem 2rem 4rem;
+  position: relative;
+}
+
+.hero-content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Main Headline - Kinetic Typography */
+.hero-headline {
+  font-size: clamp(3rem, 10vw, 5rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  opacity: 0.9;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+/* Sub-headline */
+.hero-subheadline {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #a0a0a0;
+  margin-bottom: 4rem;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  font-weight: 300;
+}
+
+/* Form Container */
+.hero-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Email Input - Transparent with Bottom Border */
+.hero-input {
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  outline: none;
+  transition: border-color 0.3s ease;
+  letter-spacing: 0.02em;
+}
+
+.hero-input::placeholder {
+  color: #666666;
+  opacity: 1;
+}
+
+.hero-input:focus {
+  border-bottom-color: #ffffff;
+}
+
+/* Minimalist Button */
+.hero-button {
+  padding: 0.75rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.hero-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.hero-button:hover {
+  opacity: 0.7;
+}
+
+.hero-button:hover::after {
+  width: 100%;
+}
+
+/* Thank You Message */
+.hero-thanks {
+  font-size: 1.1rem;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1.5rem 3rem;
+  }
+  
+  .hero-headline {
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-subheadline {
+    margin-bottom: 3rem;
+  }
+  
+  .hero-form {
+    gap: 1.5rem;
+  }
+  
+  .hero-input {
+    font-size: 0.95rem;
+  }
+  
+  .hero-button {
+    font-size: 0.85rem;
+  }
+}
+  
+  .hero-subtitle {
+    margin-bottom: 2rem;
+  }
+  
+  .hero-cta {
+    padding: 0.875rem 2rem;
+    font-size: 0.85rem;
+  }
+}
