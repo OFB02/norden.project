@@ -1,0 +1,206 @@
+/* Official Hero - The Floating Gallery */
+.official-hero {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #F2F0E6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 20px 2rem 20px;
+}
+
+.hero-gallery {
+  display: flex;
+  gap: 24px;
+  max-width: 1600px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Gallery Items - 4:5 Ratio */
+.gallery-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: calc(33.333% - 16px);
+  max-width: 450px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.03);
+}
+
+/* Main Image - Text Overlay */
+.gallery-main {
+  position: relative;
+}
+
+.hero-text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
+  padding: 3rem 2.5rem;
+  z-index: 10;
+}
+
+.hero-est {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #F2F0E6;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
+}
+
+.hero-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: #F2F0E6;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: #F2F0E6;
+  margin: 0 0 2rem 0;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: inline-block;
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  color: #F2F0E6;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-bottom: 1px solid #F2F0E6;
+  padding-bottom: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.hero-cta:hover {
+  border-bottom: 2px solid #F2F0E6;
+  padding-bottom: 0.25rem;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1200px) {
+  .hero-gallery {
+    gap: 16px;
+  }
+
+  .gallery-item {
+    max-width: 380px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-text-overlay {
+    padding: 2.5rem 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .gallery-item {
+    max-width: 320px;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile Responsive - Horizontal Scroll */
+@media (max-width: 768px) {
+  .official-hero {
+    padding: 5rem 0 2rem 0;
+    min-height: auto;
+  }
+
+  .hero-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding: 0 20px;
+    justify-content: flex-start;
+    max-width: 100%;
+  }
+
+  /* Hide scrollbar but keep functionality */
+  .hero-gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hero-gallery {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .gallery-item {
+    flex: 0 0 85vw;
+    max-width: 400px;
+    width: 85vw;
+    scroll-snap-align: start;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .hero-text-overlay {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-est {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    flex: 0 0 90vw;
+    width: 90vw;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-text-overlay {
+    padding: 1.75rem 1.25rem;
+  }
+}
+

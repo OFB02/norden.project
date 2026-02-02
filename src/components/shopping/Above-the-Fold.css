@@ -1,0 +1,315 @@
+/* Above the Fold - Split Screen Layout */
+.above-fold {
+  min-height: 100vh;
+  background-color: #F2F0E6;
+  position: relative;
+}
+
+.above-fold__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* Left Side - Product Image */
+.above-fold__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: #F2F0E6;
+  overflow: hidden;
+}
+
+.above-fold__image .product-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.above-fold__image .product-image img {
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right Side - Sticky Product Info */
+.above-fold__info {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 60px;
+  background-color: #FFFFFF;
+}
+
+.product-info {
+  max-width: 500px;
+}
+
+/* Batch Label */
+.batch-label {
+  font-family: 'Nimbus Sans', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1C1C1C;
+  margin-bottom: 24px;
+}
+
+/* Product Title */
+.product-title {
+  font-family: 'Nimbus Sans', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  color: #1C1C1C;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+}
+
+/* Price */
+.product-price {
+  font-family: 'Adobe Caslon Pro', Georgia, serif;
+  font-size: 28px;
+  font-weight: 400;
+  color: #1C1C1C;
+  margin-bottom: 32px;
+}
+
+/* Description */
+.product-description {
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4A4A4A;
+  margin-bottom: 40px;
+}
+
+/* Specifications */
+.product-specs {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spec-label {
+  font-family: 'Nimbus Sans', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #999999;
+}
+
+.spec-value {
+  font-family: 'Nimbus Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1C1C1C;
+}
+
+/* Quantity Selector */
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.quantity-label {
+  font-family: 'Nimbus Sans', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #999999;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.quantity-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2F0E6;
+  border: 1px solid #E0E0E0;
+  cursor: pointer;
+  font-family: 'Nimbus Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #1C1C1C;
+  transition: all 0.2s ease;
+}
+
+.quantity-btn:hover {
+  background-color: #E8E6DC;
+  border-color: #D0CEC4;
+}
+
+.quantity-value {
+  font-family: 'Nimbus Sans', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1C1C1C;
+  min-width: 24px;
+  text-align: center;
+}
+
+/* Add to Bag Button */
+.add-to-bag-btn {
+  width: 100%;
+  padding: 18px 32px;
+  background-color: #1C1C1C;
+  color: #FFFFFF;
+  font-family: 'Nimbus Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 16px;
+}
+
+.add-to-bag-btn:hover {
+  background-color: #000000;
+}
+
+/* Shipping Info */
+.shipping-info {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  color: #999999;
+  text-align: center;
+  margin: 0;
+}
+
+/* Mobile Sticky Bar - Hidden on Desktop */
+.mobile-sticky-bar {
+  display: none;
+}
+
+/* Tablet and Mobile Styles */
+@media (max-width: 1024px) {
+  .above-fold__container {
+    grid-template-columns: 1fr;
+  }
+
+  .above-fold__image {
+    padding: 40px;
+    min-height: 60vh;
+  }
+
+  .above-fold__info {
+    position: relative;
+    height: auto;
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .above-fold__image {
+    padding: 24px;
+    min-height: 50vh;
+  }
+
+  .above-fold__info {
+    padding: 40px 24px 120px 24px;
+  }
+
+  .product-title {
+    font-size: 24px;
+  }
+
+  .product-price {
+    font-size: 24px;
+  }
+
+  .product-description {
+    font-size: 15px;
+  }
+
+  .product-specs {
+    gap: 24px;
+  }
+
+  /* Show Mobile Sticky Bar */
+  .mobile-sticky-bar {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E0E0E0;
+    padding: 16px 24px;
+    z-index: 1000;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .mobile-sticky-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .mobile-product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mobile-product-name {
+    font-family: 'Nimbus Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1C1C1C;
+  }
+
+  .mobile-product-price {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    color: #1C1C1C;
+  }
+
+  .mobile-add-btn {
+    padding: 12px 32px;
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+    font-family: 'Nimbus Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+  }
+
+  .mobile-add-btn:active {
+    background-color: #000000;
+  }
+}

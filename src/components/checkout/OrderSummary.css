@@ -1,0 +1,170 @@
+.order-summary {
+  padding: 48px 32px;
+  background: #F2F0E6;
+}
+
+@media (min-width: 1024px) {
+  .order-summary {
+    padding: 64px 48px;
+  }
+}
+
+/* Header */
+.summary-header {
+  margin-bottom: 48px;
+}
+
+.summary-title {
+  font-family: sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #1C1C1C;
+  font-weight: 400;
+}
+
+/* Product Card */
+.summary-product {
+  margin-bottom: 64px;
+}
+
+.product-display {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.product-image {
+  width: 96px;
+  height: 128px;
+  background: #F9FAFB;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.quantity-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #1C1C1C;
+  color: #FFFFFF;
+  font-family: 'Nimbus Sans', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image-placeholder {
+  font-size: 12px;
+  color: #6B7280;
+}
+
+.product-details {
+  flex: 1;
+}
+
+.product-name {
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #1C1C1C;
+  margin-bottom: 8px;
+  line-height: 1.3;
+  font-size: 15px;
+}
+
+.product-variant {
+  font-size: 14px;
+  color: #6B7280;
+  margin-bottom: 16px;
+}
+
+.product-price {
+  font-family: serif;
+  font-size: 18px;
+  color: #1C1C1C;
+}
+
+/* Divider */
+.summary-divider {
+  border-top: 1px solid #D1D5DB;
+  margin: 32px 0;
+}
+
+/* Financials */
+.summary-financials {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.financial-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.financial-label {
+  font-size: 14px;
+  color: #374151;
+}
+
+.financial-value {
+  color: #1C1C1C;
+  font-size: 15px;
+}
+
+.financial-value.placeholder {
+  font-size: 14px;
+  color: #6B7280;
+  font-style: italic;
+}
+
+.total-row {
+  padding-top: 24px;
+  border-top: 1px solid #D1D5DB;
+}
+
+.total-label {
+  font-family: sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1C1C1C;
+  font-weight: 400;
+}
+
+.total-value {
+  font-family: serif;
+  font-size: 28px;
+  color: #1C1C1C;
+  font-weight: 500;
+}
+
+/* Additional Info */
+.summary-info {
+  border-top: 1px solid #D1D5DB;
+  padding-top: 32px;
+  margin-top: 32px;
+}
+
+.summary-info p {
+  font-size: 12px;
+  color: #6B7280;
+  line-height: 1.6;
+}

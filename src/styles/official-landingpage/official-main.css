@@ -1,0 +1,10 @@
+/* Official Landing Page Main Styles */
+.official-landing-page {
+  min-height: 100vh;
+  background-color: #FAFAF8;
+  color: #1A1A1A;
+}
+
+* {
+  box-sizing: border-box;
+}

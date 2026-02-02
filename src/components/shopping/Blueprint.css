@@ -1,0 +1,120 @@
+/* Blueprint - Technical Specifications */
+.blueprint {
+  padding: 120px 80px;
+  background-color: #F9F9F9;
+  border-top: 1px solid #E0E0E0;
+}
+
+.blueprint__container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  padding: 60px;
+  border: 1px solid #D0D0D0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.blueprint__title {
+  font-family: 'Nimbus Sans', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: center;
+  color: #1C1C1C;
+  margin: 0 0 60px 0;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.blueprint__title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background-color: #1C1C1C;
+}
+
+.blueprint__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Courier New', monospace;
+}
+
+.blueprint__row {
+  border-bottom: 1px solid #E8E8E8;
+  transition: background-color 0.2s ease;
+}
+
+.blueprint__row:hover {
+  background-color: #FAFAFA;
+}
+
+.blueprint__row:last-child {
+  border-bottom: none;
+}
+
+.blueprint__label {
+  padding: 24px 20px 24px 0;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #1C1C1C;
+  width: 35%;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+
+.blueprint__value {
+  padding: 24px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #4A4A4A;
+  line-height: 1.6;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+  .blueprint {
+    padding: 100px 60px;
+  }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .blueprint {
+    padding: 80px 24px;
+  }
+
+  .blueprint__container {
+    padding: 40px 24px;
+  }
+
+  .blueprint__title {
+    font-size: 13px;
+    margin-bottom: 40px;
+  }
+
+  .blueprint__label,
+  .blueprint__value {
+    padding: 16px 0;
+    font-size: 12px;
+    display: block;
+    width: 100%;
+  }
+
+  .blueprint__label {
+    padding-bottom: 8px;
+  }
+
+  .blueprint__value {
+    padding-top: 0;
+  }
+
+  .blueprint__row {
+    display: flex;
+    flex-direction: column;
+  }
+}

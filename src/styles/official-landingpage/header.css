@@ -1,0 +1,162 @@
+/* Announcement Bar */
+.announcement-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+  background-color: #1C1C1C;
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+.announcement-bar p {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* Official Header - Transparent Overlay */
+.official-header {
+  position: fixed;
+  top: 2rem;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  padding: 1.5rem 3rem;
+  transition: all 0.3s ease;
+}
+
+/* Shopping page - hide header until scroll */
+.official-header.shop-header .official-nav-left a,
+.official-header.shop-header .official-logo a,
+.official-header.shop-header .official-nav-right a {
+  opacity: 0;
+}
+
+.official-header.scrolled {
+  background: #F2F0E6;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.1);
+  padding: 1rem 3rem;
+}
+
+.official-header-container {
+  max-width: 1800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Left Navigation */
+.official-nav-left {
+  display: flex;
+  gap: 2rem;
+  justify-self: start;
+}
+
+.official-nav-left a {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #F2F0E6;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.official-header.scrolled .official-nav-left a {
+  color: #1C1C1C;
+}
+
+.official-nav-left a:hover {
+  opacity: 0.6;
+}
+
+/* Center Logo */
+.official-logo {
+  justify-self: center;
+}
+
+.official-logo a {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #F2F0E6;
+  text-decoration: none;
+  text-transform: lowercase;
+  transition: opacity 0.3s ease;
+}
+
+.official-header.scrolled .official-logo a {
+  color: #1C1C1C;
+}
+
+.official-logo a:hover {
+  opacity: 0.6;
+}
+
+/* Right Function */
+.official-nav-right {
+  justify-self: end;
+}
+
+.official-nav-right a {
+  font-family: 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #F2F0E6;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: opacity 0.3s ease;
+}
+
+.official-header.scrolled .official-nav-right a {
+  color: #1C1C1C;
+}
+
+.official-nav-right a:hover {
+  opacity: 0.6;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .announcement-bar p {
+    font-size: 9px;
+  }
+
+  .official-header {
+    padding: 1rem 1.5rem;
+    top: 1.8rem;
+  }
+
+  .official-header.scrolled {
+    padding: 0.8rem 1.5rem;
+  }
+
+  .official-header-container {
+    gap: 1rem;
+  }
+
+  .official-nav-left {
+    gap: 1rem;
+  }
+
+  .official-nav-left a,
+  .official-nav-right a {
+    font-size: 9px;
+  }
+
+  .official-logo a {
+    font-size: 12px;
+  }
+}
